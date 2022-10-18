@@ -3,7 +3,7 @@ const cors=require('cors');
 
 
 const app = express()
-const port=8000;
+const port= process.env.PORT || 5000;
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
@@ -23,7 +23,7 @@ app.post("/mail", (req,res)=>{
         }
     })
     
-    
+   
     
     let details = {
         from : "subscribe.to.gokulrajalp@gmail.com",
@@ -33,6 +33,7 @@ app.post("/mail", (req,res)=>{
     }
     
     mailTranspoter.sendMail(details,(err)=>{
+       
         if(err){
             res.send({message: `Try again after sometimes or Check whether you given the correct Email ID... or Contact the admin`});
         }else{
